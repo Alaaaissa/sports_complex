@@ -1,14 +1,6 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import StaffViewSet, ClientViewSet, FacilityViewSet, ReservationViewSet, PaymentViewSet
-
-router = DefaultRouter()
-router.register(r'staff', StaffViewSet)
-router.register(r'clients', ClientViewSet)
-router.register(r'facilities', FacilityViewSet)
-router.register(r'reservations', ReservationViewSet)
-router.register(r'payments', PaymentViewSet)
+from django.urls import path
+from .views import login  # Make sure 'login' is imported
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('login/', login, name='login'),
 ]
